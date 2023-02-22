@@ -2,10 +2,27 @@ call plug#begin()
 
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
-let g:coc_global_extensions = [ \ 'coc-clangd', \ 'coc-pyright']
+let g:coc_global_extensions = [ 
+\ 'coc-clangd',
+\ 'coc-pyright',
+\ 'coc-html',
+\ 'coc-tsserver',
+\]
+
+autocmd VimEnter * NERDTree | wincmd p
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+colorscheme tokyonight-storm
+
+
+set nu "開啟行數"
+set tabstop=4 "格數"
+set shiftwidth=4 "縮排"
 
 " 太長的更新間隔會導致明顯的延遲並降低使用者體驗（預設是 4000 ms = 4s ）
 set updatetime=300
