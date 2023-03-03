@@ -14,6 +14,9 @@ let g:coc_global_extensions = [
 \ 'coc-tsserver',
 \]
 
+set clipboard=unnamed "複製至外部文件"
+
+nnoremap <F5> :exec 'NERDTreeToggle' <CR>
 autocmd VimEnter * NERDTree | wincmd p
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
