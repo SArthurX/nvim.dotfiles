@@ -1,9 +1,13 @@
+"so %"
+"PlugInstall"
 call plug#begin()
 
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -14,8 +18,10 @@ let g:coc_global_extensions = [
 \ 'coc-tsserver',
 \]
 
-set clipboard=unnamed "複製至外部文件"
+let g:airline_theme = 'deus'
+let g:airline#extensions#tabline#enabled = 1
 
+set clipboard=unnamed "複製至
 nnoremap <F5> :exec 'NERDTreeToggle' <CR>
 autocmd VimEnter * NERDTree | wincmd p
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
