@@ -2,7 +2,6 @@
 "PlugInstall"
 call plug#begin()
 
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'preservim/nerdtree'
@@ -19,7 +18,7 @@ let g:coc_global_extensions = [
 \ 'coc-tsserver',
 \]
 
-let g:mkdp_browser = 'msedge'
+let g:mkdp_browser = 'msedge' "MarkdownPreviewToggle
 
 let g:airline_theme = 'deus'
 let g:airline#extensions#tabline#enabled = 1
