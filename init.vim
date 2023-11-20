@@ -8,6 +8,7 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 call plug#end()
 
@@ -17,6 +18,8 @@ let g:coc_global_extensions = [
 \ 'coc-html',
 \ 'coc-tsserver',
 \]
+
+let g:mkdp_browser = 'msedge'
 
 let g:airline_theme = 'deus'
 let g:airline#extensions#tabline#enabled = 1
